@@ -1,0 +1,30 @@
+{
+  "name": "express-debugger",
+  "version": "0.1.0",
+  "description": "Debugger dashboard for express apps",
+  "main": "./lib/main.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "server": "node ./lib/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beplatform/express-debugger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beplatform/express-debugger/issues"
+  },
+  "homepage": "https://github.com/beplatform/express-debugger#readme",
+  "devDependencies": {
+    "mocha": "^9.2.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-random-string": "^4.0.0",
+    "express": "^4.17.2"
+  }
+}

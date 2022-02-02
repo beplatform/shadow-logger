@@ -1,0 +1,59 @@
+{
+    "configuration": {
+        "nodejs": {
+            "version": "v16"
+        },
+    },
+    "request": {
+        "parameters": {
+            "method": "GET",
+            "isSecureConnection": true,
+            "route": "merchant/users",
+            "parameters": {
+                "id": "1"
+            },
+            "get": {
+                "id": "1"
+            },
+            "post": null,
+            "files": null,
+            "cookies": {
+                "session": "123456789"
+            },
+            "requestBody": null
+        },
+        "headers": {
+            "request": {
+                "accept-language": "en-US,en;q=0.9",
+                "accept-encoding": "gzip, deflate, br",
+                "referer": "https://www.google.com/",
+                "origin": "https://www.google.com/",
+                "authorization": "Bearer eyJ0eXAIoI",
+                "pragma": "no-cache",
+            },
+            "response": {
+                "content-type": "application/json",
+                "set-cookie": "session=123456789; path=/; expires=Tue, 21-May-2019 23:59:59 GMT"
+            }
+        }
+    },
+    "logs": [
+        {
+            "time": "15:49:00",
+            "level": "info",
+            "message": "Request received",
+            "startTime": "15:49:00",
+            "endTime": "15:49:00"
+        },
+        {
+            "time": "15:49:00",
+            "level": "info",
+            "message": "DB Connection",
+        },
+        {
+            "time": "15:49:00",
+            "level": "info",
+            "message": "SHOW FULL COLUMNS FROM `merchant`"
+        }
+    ]
+}
