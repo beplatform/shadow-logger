@@ -2,11 +2,12 @@
   "name": "express-debugger",
   "version": "0.1.0",
   "description": "Debugger dashboard for express apps",
+  "bin": "./lib/cli.js",
   "main": "./lib/main.js",
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "server": "node ./lib/server.js"
+    "server": "node ./lib/cli.js up"
   },
   "repository": {
     "type": "git",
