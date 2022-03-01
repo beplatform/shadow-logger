@@ -2,7 +2,7 @@
     "configuration": {
         "nodejs": {
             "version": "v16"
-        },
+        }
     },
     "request": {
         "parameters": {
@@ -29,7 +29,7 @@
                 "referer": "https://www.google.com/",
                 "origin": "https://www.google.com/",
                 "authorization": "Bearer eyJ0eXAIoI",
-                "pragma": "no-cache",
+                "pragma": "no-cache"
             },
             "response": {
                 "content-type": "application/json",
@@ -48,7 +48,7 @@
         {
             "time": "15:49:00",
             "level": "info",
-            "message": "DB Connection",
+            "message": "DB Connection"
         },
         {
             "time": "15:49:00",
