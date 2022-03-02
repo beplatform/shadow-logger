@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import Axios from 'axios';
+import Home from "./Views/Home/Home";
 
 const apiClient = Axios.create({
   baseURL: 'http://localhost:8071',
@@ -37,7 +38,7 @@ const dataProvider2 = {
 
 const App = () => (
   <Admin dataProvider={dataProvider2}>
-    <Resource name='index.json' options={{label: 'Home'}} list={ListGuesser} />
+    <Resource name='index.json' options={{label: 'Home'}} {...Home} />
   </Admin>
 );
 
