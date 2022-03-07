@@ -585,6 +585,11 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
+node_modules-path@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/node_modules-path/-/node_modules-path-2.0.5.tgz#477b1e95d2a365976db3a799ba7709fb476edf58"
+  integrity sha512-l5wyQWP56Gct/qpBV9lAJA9Al+WhwF0PTtfzpla8cd0wa735e03fhpV0wyN1MZHFm/yF9+kxPdBXxMVL8S73iQ==
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
