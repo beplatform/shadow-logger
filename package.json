@@ -21,9 +21,6 @@
     "url": "https://github.com/beplatform/express-debugger/issues"
   },
   "homepage": "https://github.com/beplatform/express-debugger#readme",
-  "devDependencies": {
-    "mocha": "^9.2.0"
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "crypto-random-string": "^4.0.0",
@@ -31,6 +28,7 @@
     "node_modules-path": "^2.0.5"
   },
   "devDependencies": {
+    "mocha": "^9.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
