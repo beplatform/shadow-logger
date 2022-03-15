@@ -4,7 +4,7 @@ import Axios from 'axios';
 import Home from "./Views/Home/Home";
 
 const apiClient = Axios.create({
-  baseURL: 'http://localhost:8081',
+  baseURL: 'http://localhost:8081/data',
   headers: {
     'Pragma': 'no-cache',
     'Content-Type': 'application/json; charset=UTF-8',
