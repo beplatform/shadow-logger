@@ -1,5 +1,5 @@
 {
-  "name": "express-debugger",
+  "name": "express-logger",
   "version": "0.1.7",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
@@ -25,7 +25,6 @@
     "cors": "^2.8.5",
     "crypto-random-string": "^4.0.0",
     "express": "^4.17.2",
-    "git": "^0.1.5",
     "node_modules-path": "^2.0.5"
   },
   "devDependencies": {
