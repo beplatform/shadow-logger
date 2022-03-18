@@ -5,8 +5,6 @@ const dataProvider = {
     return apiInstance.get(`/${resource}`);
   },
   getOne: (resource, params) => {
-    console.log(resource)
-    console.log(params)
     return apiInstance.get(`/${params.id}.json`);
   },
   getMany:    (resource, params) => { return new Promise((resolve, reject) => {resolve('Hi')});},

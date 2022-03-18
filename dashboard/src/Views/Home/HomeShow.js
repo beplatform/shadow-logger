@@ -10,39 +10,45 @@ import {
   TabbedShowLayout,
   TextField
 } from 'react-admin';
+import ShowCall from '../ShowCall/ShowCall';
 
-const HomeShow = props => (
-  <Show {...props}>
-    <TabbedShowLayout>
-      <Tab label='request'>
-        <TextField source="id" />
-        <TextField source="title" />
-        <TextField source="teaser" />
-      </Tab>
-      <Tab label="Body" path="body">
-        <RichTextField
-          source="body"
-          stripTags={false}
-          label=""
-          addLabel={false}
-        />
-      </Tab>
-      <Tab label="Comments" path="comments">
-        <ReferenceManyField
-          addLabel={false}
-          reference="comments"
-          target="post_id"
-          sort={{ field: 'created_at', order: 'DESC' }}
-        >
-          <Datagrid>
-            <DateField source="created_at" />
-            <TextField source="body" />
-            <ShowButton />
-          </Datagrid>
-        </ReferenceManyField>
-      </Tab>
-    </TabbedShowLayout>
-  </Show>
-);
+const HomeShow = props => {
+  return (
+    <Show {...props}>
+      <ShowCall />
+    </Show>
+  );
+  return (
+    <Show {...props}>
+      <TabbedShowLayout>
+        <Tab label='request'>
+          <TextField source="id" />
+        </Tab>
+        <Tab label="response" path="response">
+          <RichTextField
+            source="response"
+            stripTags={false}
+            label=""
+            addLabel={false}
+          />
+        </Tab>
+        <Tab label="logs" path="logs">
+          <ReferenceManyField
+            addLabel={false}
+            reference="logs"
+            target="post_id"
+            sort={{ field: 'created_at', order: 'DESC' }}
+          >
+            <Datagrid>
+              <DateField source="created_at" />
+              <TextField source="body" />
+              <ShowButton />
+            </Datagrid>
+          </ReferenceManyField>
+        </Tab>
+      </TabbedShowLayout>
+    </Show>
+  );
+};
 
 export default HomeShow;
