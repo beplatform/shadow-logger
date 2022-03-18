@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Tab, TabbedShowLayout, TextField, Datagrid, FieldTitle, LoadingIndicator } from 'react-admin';
+import { Tab, TabbedShowLayout, TextField, FieldTitle, LoadingPage } from 'react-admin';
 import { capitalizeFirstLetter, mapFields } from '../../utils/utils';
 
 const ShowCall = ({record, ...props}) => {
