@@ -6,7 +6,7 @@ const ShowCall = ({record, ...props}) => {
 	const { request, response } = record;
 
 	if (!request || !response) {
-		return <LoadingIndicator />
+		return <LoadingPage />
 	}
 
 	const requestMap = mapFields('request', request);
