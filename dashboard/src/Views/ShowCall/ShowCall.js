@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react';
-import { Tab, TabbedShowLayout, TextField, Datagrid, FieldTitle } from 'react-admin';
+import { Tab, TabbedShowLayout, TextField, Datagrid, FieldTitle, LoadingIndicator } from 'react-admin';
 import { capitalizeFirstLetter, mapFields } from '../../utils/utils';
 
-const ShowCall = ({record}) => {
+const ShowCall = ({record, ...props}) => {
 	const { request, response } = record;
+
+	if (!request || !response) {
+		return <LoadingIndicator />
+	}
 
 	const requestMap = mapFields('request', request);
 	const responseMap = mapFields('response', response);
@@ -31,6 +35,9 @@ const ShowCall = ({record}) => {
 						return <TextField key={k.source} {...k} />
 					})
 				}
+			</Tab>
+			<Tab label='logs'>
+
 			</Tab>
 		</TabbedShowLayout>
 	);
