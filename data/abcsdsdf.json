@@ -1,6 +1,6 @@
 {
     "id": "abcsdsdf",
-    "configuration": {
+    "response": {
         "nodejs": {
             "version": "v16"
         }
