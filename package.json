@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "server": "node ./lib/cli.js up",
+    "server": "node ./lib/cli.js up prod",
+    "server:dev": "node ./lib/cli.js up dev",
     "build": "cd ./dashboard && react-scripts build"
   },
   "repository": {
