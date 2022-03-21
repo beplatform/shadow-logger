@@ -1,16 +1,12 @@
 import React, { Fragment } from 'react';
-import { Tab, TabbedShowLayout, TextField, FieldTitle, LoadingPage } from 'react-admin';
-import { capitalizeFirstLetter, mapFields } from '../../utils/utils';
+import { Tab, TabbedShowLayout, TextField, FieldTitle, ArrayField, Datagrid, ReferenceArrayField } from 'react-admin';
+import { mapFields } from '../../utils/utils';
 
 const ShowCall = ({record, ...props}) => {
-	const { request, response } = record;
+	const { request, response, id } = record;
 
-	if (!request || !response) {
-		return <LoadingPage />
-	}
-
-	const requestMap = mapFields('request', request);
-	const responseMap = mapFields('response', response);
+	const requestMap = request ? mapFields('request', request) : [];
+	const responseMap = response ? mapFields('response', response) : [];
 
 	return (
 		<TabbedShowLayout>
@@ -37,7 +33,13 @@ const ShowCall = ({record, ...props}) => {
 				}
 			</Tab>
 			<Tab label='logs'>
-
+				<ArrayField source='logs'>
+					<Datagrid>
+						<TextField source='time'/>
+						<TextField source='level'/>
+						<TextField source='message'/>
+					</Datagrid>
+				</ArrayField>
 			</Tab>
 		</TabbedShowLayout>
 	);
