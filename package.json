@@ -9,6 +9,7 @@
     "test": "mocha",
     "server": "node ./lib/cli.js up prod",
     "server:dev": "node ./lib/cli.js up dev",
+    "start": "cd ./dashboard && react-scripts start",
     "build": "cd ./dashboard && react-scripts build"
   },
   "repository": {
@@ -40,6 +41,7 @@
     "react-admin": "^3.19.7",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "query-string": "^7.1.1"
   }
 }
