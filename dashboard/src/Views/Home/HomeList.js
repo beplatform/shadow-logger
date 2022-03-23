@@ -2,17 +2,16 @@ import React from 'react';
 import {
   Datagrid,
   List,
-  Responsive,
   ShowButton,
-  SimpleList,
 	TextField,
 	DateField
 } from 'react-admin';
+import HomeFilters from './HomeFilters';
 
 const HomeList = (({ classes, ...props }) => (
-  <List {...props}>
+  <List {...props} bulkActionButtons={false} filters={<HomeFilters />}>
     <Datagrid>
-      <TextField source='id'/>
+      <TextField source='id' sortable={false} />
       <DateField source='time' />
       <TextField source='ip'/>
       <TextField source='queryCount'/>
