@@ -9,10 +9,13 @@ const apiInstance = Axios.create({
 });
 
 apiInstance.interceptors.response.use((response) => {
-  return {
-    ...response,
-    total: response.data.length,
-  };
+  if (response.headers['x-total-count']) {
+    return {
+      ...response,
+      total: parseInt(response.headers['x-total-count'])
+    };
+  }
+  return response;
 }, (error) => {
   return Promise.reject(error);
 }, {synchronous: true});

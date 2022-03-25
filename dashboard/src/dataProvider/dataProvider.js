@@ -3,9 +3,14 @@ import queryString from 'query-string';
 
 const dataProvider = {
   getList: (resource, params) => {
-    const qp = queryString.stringify(params);
-    console.log(qp)
-    return apiInstance.get(`/${resource}`);
+    console.log(params)
+    const qp = queryString.stringify({
+      ...params.pagination,
+      ...params.sort,
+      ...params.filter
+    });
+    console.log(qp);
+    return apiInstance.get(`/${resource}?${qp}`);
   },
   getOne: (resource, params) => {
     return apiInstance.get(`/${params.id}.json`);
