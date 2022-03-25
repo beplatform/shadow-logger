@@ -9,7 +9,7 @@ import {
 import HomeFilters from './HomeFilters';
 
 const HomeList = (({ classes, ...props }) => (
-  <List {...props} bulkActionButtons={false} filters={<HomeFilters />}>
+  <List {...props} bulkActionButtons={false} sort={{field: 'time', order: 'DESC'}} filters={<HomeFilters />}>
     <Datagrid>
       <TextField source='id' sortable={false} />
       <DateField source='time' />

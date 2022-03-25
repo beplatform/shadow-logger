@@ -1,7 +1,10 @@
 import apiInstance from "./apiInstance";
+import queryString from 'query-string';
 
 const dataProvider = {
   getList: (resource, params) => {
+    const qp = queryString.stringify(params);
+    console.log(qp)
     return apiInstance.get(`/${resource}`);
   },
   getOne: (resource, params) => {
