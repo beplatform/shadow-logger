@@ -3,13 +3,13 @@ import queryString from 'query-string';
 
 const dataProvider = {
   getList: (resource, params) => {
-    console.log(params)
     const qp = queryString.stringify({
       ...params.pagination,
       ...params.sort,
-      ...params.filter
+      url: params.filter && params.filter.url,
+      status: params.filter && params.filter.status,
+      method: params.filter && params.filter.method && params.filter.method.toString()
     });
-    console.log(qp);
     return apiInstance.get(`/${resource}?${qp}`);
   },
   getOne: (resource, params) => {

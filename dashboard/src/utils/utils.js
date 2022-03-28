@@ -1,6 +1,6 @@
 export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
-}
+};
 
 export const mapFields = (label, object) => {
 	const keys = Object.keys(object);
@@ -23,4 +23,4 @@ export const mapFields = (label, object) => {
 			label: capitalizeFirstLetter(k)
 		}];
 	}, []);
-}
+};

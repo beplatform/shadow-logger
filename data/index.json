@@ -17,7 +17,7 @@
         "mailCount": 6,
         "method": "POST",
         "url": "/",
-        "status": 200
+        "status": 400
     },
     {
         "id": "acsdsdf",
@@ -137,7 +137,7 @@
         "mailCount": 3,
         "method": "GET",
         "url": "/",
-        "status": 200
+        "status": 400
     },
     {
         "id": "ab2fef1df",
@@ -246,7 +246,7 @@
         "queryCount": 1,
         "mailCount": 1,
         "method": "GET",
-        "url": "/",
+        "url": "/manufacturers",
         "status": 200
     },
     {
@@ -257,7 +257,7 @@
         "mailCount": 1,
         "method": "GET",
         "url": "/",
-        "status": 200
+        "status": 500
     },
     {
         "id": "ab2324465df",
@@ -296,7 +296,7 @@
         "queryCount": 1,
         "mailCount": 1,
         "method": "GET",
-        "url": "/",
+        "url": "/login",
         "status": 200
     },
     {
@@ -306,7 +306,7 @@
         "queryCount": 1,
         "mailCount": 1,
         "method": "GET",
-        "url": "/",
+        "url": "/signup",
         "status": 200
     }
 ]
