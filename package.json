@@ -1,6 +1,6 @@
 {
   "name": "express-logger",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
