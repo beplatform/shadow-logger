@@ -1,6 +1,6 @@
 {
   "name": "express-logger",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
@@ -10,7 +10,8 @@
     "server": "node ./lib/cli.js up prod",
     "server:dev": "node ./lib/cli.js up dev",
     "start": "cd ./dashboard && react-scripts start",
-    "build": "cd ./dashboard && REACT_APP_API_URL=http://localhost:8081/logs PUBLIC_URL=/debug react-scripts build"
+    "build:dev": "cd ./dashboard && REACT_APP_API_URL=http://localhost:8081/logs PUBLIC_URL=/debug react-scripts build",
+    "build": "cd ./dashboard && react-scripts build"
   },
   "repository": {
     "type": "git",
