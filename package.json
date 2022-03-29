@@ -1,6 +1,6 @@
 {
   "name": "express-logger",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
@@ -29,7 +29,6 @@
     "express": "^4.17.2",
     "moment": "^2.29.1",
     "react-scripts": "5.0.0",
-    "node_modules-path": "^2.0.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -42,5 +41,8 @@
     "react-admin": "^3.19.7",
     "react-dom": "^17.0.2",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "node_modules-path": "^2.0.5"
   }
 }
