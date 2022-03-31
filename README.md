@@ -74,7 +74,7 @@ Tip: Add this script to your package.json file to easily run it with yarn or npm
 ### 2. Serve Application
 
 ```
-app.use('/', serveDebugger(DebuggerUrlPath));
+app.use('/', serveDebugger(DebuggerUrlPath, DebuggerBuildPath));
 ```
 | Parameter | Values | Example |
 | --- | --- | --- |
