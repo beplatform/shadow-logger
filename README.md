@@ -7,7 +7,7 @@ Add this under dependencies and yarn install or npm install
 "express-logger": "github:beplatform/express-logger"
 ```
 
-## Get logger middleware running
+## Get Logger Middleware Running
 ### Example
 ```
 import logger from 'express-logger';
@@ -18,7 +18,6 @@ const app = express();
 
 app.use(logger({writerType: 'fs', path: './logs', ignore: ['/logs','/debug']}))
 ```
-### Params
 | Parameter | Values |
 | --- | --- |
 | writerType | 'fs', 'console', 's3' |
@@ -26,17 +25,16 @@ app.use(logger({writerType: 'fs', path: './logs', ignore: ['/logs','/debug']}))
 | ignore | Array for paths to ignore, will not log these paths, make sure you add the path of your debugger |
 
 ## Serve Logger
-This is to allow the logs to be read by API calls. Ex: htto://localhost/logs/index.json.
+This is to allow the logs to be read by API calls. Ex: http://localhost/logs/index.json.
 Make sure you create your express app.
 ### FS Logger
 Reads logs save by `writerType: 'fs'` on your computer file system.
 ```
-app.use('/', serveFSLogger(urlPath, logsPath));
+app.use('/', serveFSLogger(logsApiUrl, logsPath));
 ```
-### Params
 | Parameter | Values | Example |
 | --- | --- | --- |
-| urlPath | Where your API is serve | '/logs' |
+| logsApiUrl | Where your API is serve | '/logs' |
 | logsPath | root directory where the files will be written, can be a relative path | './logs' or './data' |
 
 You can have different log path name and url path name. The url path is for how you will access the logs with api calls.
@@ -52,29 +50,36 @@ Serve frontend application made in React Admin to manage and view your logs.
 ### 1. Build Application
 On the CLI of your project run:
 ```
-npx express-logger build <LoggerUrlPath> <DebuggerUrlPath>
+npx express-logger build <LogsApiUrl> <DebuggerUrlPath> <DebuggerBuildPath>
 ```
-#### Params
 | Parameter | Values | Example |
 | --- | --- | --- |
-| LoggerUrlPath | Same one you add to the logger function, but add the full domain | 'http:localhost/logs' |
+| LogsApiUrl | Same one you add to the logger function, but add the full domain | 'http:localhost/logs' |
 | DebuggerUrlPath | Where you debugger will be serve on your express app | '/debug' or 'https://domain.com/debug' |
+| DebuggerBuildPath | Build frontend debugger files | default: ./build |
 
 Ex:
 ```
-npx express-logger build 'https://domain.com/logs' '/debug'
+npx express-logger build 'https://domain.com/logs' '/debug' './build'
 ```
 This will allow to access your debugger on localhost/debug.
+
+Tip: Add this script to your package.json file to easily run it with yarn or npm `yarn buildDebugger` or `npm run buildDebugger`:
+```
+"scripts": {
+  "buildDebugger": "npx express-logger build 'https://domain.com/logs' '/debug' './build'"
+}
+```
 
 ### 2. Serve Application
 
 ```
 app.use('/', serveDebugger(DebuggerUrlPath));
 ```
-#### Params
 | Parameter | Values | Example |
 | --- | --- | --- |
 | DebuggerUrlPath | Where you debugger will be serve on your express app, use the same value you use on the build, but relative url path not full domain | '/debug' |
+| DebuggerBuildPath | Same location you build the debugger | './build' |
 
 ## Full Example
 ```
