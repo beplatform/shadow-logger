@@ -25,9 +25,11 @@ const ShowCall = ({record, ...props}) => {
 				<TextField source='id' label='Request ID' />
 				<hr/>
 				{
-					responseMap.map(({isTitle, ...k}) => {
+					responseMap.map(({isTitle, isJson, ...k}) => {
 						if (isTitle)
 							return <Fragment key={k.source}><hr/><FieldTitle {...k} /></Fragment>
+						if (isJson)
+							return <JsonField key={k.source} {...k} />
 						return <TextField key={k.source} {...k} />
 					})
 				}

@@ -20,6 +20,7 @@ export const mapFields = (label, object) => {
 		return [...arr, {
 			isTitle: false,
 			source: `${label}.${k}`,
+			isJson: k === 'body',
 			label: capitalizeFirstLetter(k)
 		}];
 	}, []);
