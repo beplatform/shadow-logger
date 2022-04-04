@@ -1,6 +1,6 @@
 {
   "name": "express-logger",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
@@ -28,7 +28,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "aws-sdk": "^2.1106.0",
+    "@aws-sdk/client-s3": "^3.32.0",
     "axios": "^0.25.0",
     "cors": "^2.8.5",
     "crypto-random-string": "^4.0.0",
