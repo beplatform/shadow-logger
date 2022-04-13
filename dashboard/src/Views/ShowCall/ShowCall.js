@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import { Tab, TabbedShowLayout, TextField, FieldTitle, ArrayField, Datagrid, ReferenceArrayField } from 'react-admin';
+import { Tab, TabbedShowLayout, TextField, FieldTitle, ArrayField, Datagrid, ReferenceArrayField, DateField } from 'react-admin';
 import { mapFields } from '../../utils/utils';
+import { JsonField, JsonInput } from "react-admin-json-view";
 
 const ShowCall = ({record, ...props}) => {
 	const { request, response, id } = record;
@@ -13,26 +14,18 @@ const ShowCall = ({record, ...props}) => {
 			<Tab label='request'>
 				<TextField source='id' label='Request ID' />
 				<hr/>
-				{
-					requestMap.map(({isTitle, ...k}) => {
-						if (isTitle)
-							return <Fragment key={k.source}><hr/><FieldTitle {...k} /></Fragment>
-						return <TextField key={k.source} {...k} />
-					})
-				}
+        <TextField source='request.method' label='Method' />
+        <DateField source='request.time' label='Request Time' />
+        <TextField source='request.url' label='URL' />
+        <TextField source='request.ip' label='IP' />
+        <JsonField source='request.headers' label='Headers' />
 			</Tab>
 			<Tab label='response'>
 				<TextField source='id' label='Request ID' />
 				<hr/>
-				{
-					responseMap.map(({isTitle, isJson, ...k}) => {
-						if (isTitle)
-							return <Fragment key={k.source}><hr/><FieldTitle {...k} /></Fragment>
-						if (isJson)
-							return <JsonField key={k.source} {...k} />
-						return <TextField key={k.source} {...k} />
-					})
-				}
+        <TextField source='response.status' label='Status' />
+        <DateField source='response.time' label='Response Time' />
+        <JsonField source='response.body' label='Body' />
 			</Tab>
 			<Tab label='logs'>
 				<ArrayField source='logs'>
