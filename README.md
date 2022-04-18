@@ -1,16 +1,16 @@
-# express-debugger
+# shadow-logger
 Debugger dashboard for express apps
 
 ## Install
-Add this under dependencies and yarn install or npm install
+Install with either npm or yarn
 ```
-"express-logger": "github:beplatform/express-logger"
+npm install shadow-logger
 ```
 
 ## Get Logger Middleware Running
 ### Example
 ```
-import logger from 'express-logger';
+import logger from 'shadow-logger';
 
 ...
 const app = express();
@@ -50,7 +50,7 @@ Serve frontend application made in React Admin to manage and view your logs.
 ### 1. Build Application
 On the CLI of your project run:
 ```
-npx express-logger build <LogsApiUrl> <DebuggerUrlPath> <DebuggerBuildPath>
+npx shadow-logger build <LogsApiUrl> <DebuggerUrlPath> <DebuggerBuildPath>
 ```
 | Parameter | Values | Example |
 | --- | --- | --- |
@@ -60,14 +60,14 @@ npx express-logger build <LogsApiUrl> <DebuggerUrlPath> <DebuggerBuildPath>
 
 Ex:
 ```
-npx express-logger build 'https://domain.com/logs' '/debug' './build'
+npx shadow-logger build 'https://domain.com/logs' '/debug' './build'
 ```
 This will allow to access your debugger on localhost/debug.
 
 Tip: Add this script to your package.json file to easily run it with yarn or npm `yarn buildDebugger` or `npm run buildDebugger`:
 ```
 "scripts": {
-  "buildDebugger": "npx express-logger build 'https://domain.com/logs' '/debug' './build'"
+  "buildDebugger": "npx shadow-logger build 'https://domain.com/logs' '/debug' './build'"
 }
 ```
 
@@ -83,7 +83,7 @@ app.use('/', serveDebugger(DebuggerUrlPath, DebuggerBuildPath));
 
 ## Full Example
 ```
-import logger, { serveDebugger, serveFSLogger } from 'express-logger';
+import logger, { serveDebugger, serveFSLogger } from 'shadow-logger';
 import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
