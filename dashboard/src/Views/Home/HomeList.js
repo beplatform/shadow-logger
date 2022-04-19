@@ -12,7 +12,7 @@ const HomeList = (({ classes, ...props }) => (
   <List {...props} bulkActionButtons={false} sort={{field: 'time', order: 'DESC'}} filters={<HomeFilters />}>
     <Datagrid>
       <TextField source='id' sortable={false} />
-      <DateField source='time' />
+      <DateField source='time' showTime />
       <TextField source='ip'/>
       <TextField source='queryCount'/>
       <TextField source='mailCount'/>

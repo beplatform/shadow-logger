@@ -3,22 +3,17 @@ import { Tab, TabbedShowLayout, TextField, FieldTitle, ArrayField, Datagrid, Ref
 import { mapFields } from '../../utils/utils';
 import { JsonField, JsonInput } from "react-admin-json-view";
 
-const ShowCall = ({record, ...props}) => {
-	const { request, response, id } = record;
-
-	const requestMap = request ? mapFields('request', request) : [];
-	const responseMap = response ? mapFields('response', response) : [];
-
+const ShowCall = (props) => {
 	return (
-		<TabbedShowLayout>
+		<TabbedShowLayout {...props}>
 			<Tab label='request'>
 				<TextField source='id' label='Request ID' />
 				<hr/>
         <TextField source='request.method' label='Method' />
-        <DateField source='request.time' label='Request Time' />
+        <DateField source='request.time' label='Request Time' showTime />
         <TextField source='request.url' label='URL' />
         <TextField source='request.ip' label='IP' />
-        <JsonField source='request.headers' label='Headers' />
+        <JsonField source='request.headers' label='Headers' addLabel={true} reactJsonOptions={{name: null, collapsed: true, displayDataTypes: false}} />
 			</Tab>
 			<Tab label='response'>
 				<TextField source='id' label='Request ID' />
