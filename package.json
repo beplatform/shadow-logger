@@ -1,6 +1,6 @@
 {
   "name": "shadow-logger",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
@@ -10,6 +10,7 @@
     "server": "node ./lib/cli.js up prod",
     "server:dev": "node ./lib/cli.js up dev",
     "start": "cd ./dashboard && react-scripts start",
+    "start:localhost": "cd ./dashboard && REACT_APP_API_URL=http://localhost/logs react-scripts start",
     "build:dev": "cd ./dashboard && REACT_APP_API_URL=http://localhost:8081/logs PUBLIC_URL=/debug react-scripts build",
     "build": "cd ./dashboard && react-scripts build"
   },

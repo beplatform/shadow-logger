@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import { Tab, TabbedShowLayout, TextField, FieldTitle, ArrayField, Datagrid, ReferenceArrayField, DateField } from 'react-admin';
-import { mapFields } from '../../utils/utils';
-import { JsonField, JsonInput } from "react-admin-json-view";
+import React from 'react';
+import { Tab, TabbedShowLayout, TextField, ArrayField, Datagrid, DateField } from 'react-admin';
+import { JsonField } from 'react-admin-json-view';
+import ArrayLogs from './ArrayLogs';
 
 const ShowCall = (props) => {
 	return (
@@ -19,18 +19,12 @@ const ShowCall = (props) => {
 			<Tab label='response'>
 				<TextField source='id' label='Request ID' />
 				<hr/>
-        <TextField source='response.status' label='Status' />
+        <TextField source='response.status' label='Status' color='red' />
         <DateField source='response.time' label='Response Time' />
         <JsonField source='response.body' label='Body' addLabel={true} reactJsonOptions={{name: null, collapsed: true, displayDataTypes: false}} />
 			</Tab>
 			<Tab label='logs'>
-				<ArrayField source='logs'>
-					<Datagrid>
-						<TextField source='time'/>
-						<TextField source='level'/>
-						<TextField source='message'/>
-					</Datagrid>
-				</ArrayField>
+        <ArrayLogs />
 			</Tab>
 		</TabbedShowLayout>
 	);
