@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, ArrayField, Datagrid, DateField } from 'react-admin';
+import { TextField, DateField } from 'react-admin';
 
 const ArrayLogs = ({record}) => {
   return (

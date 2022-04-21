@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutocompleteArrayInput, CardActions, Filter, SelectField, SelectInput, TextInput } from 'react-admin';
+import { AutocompleteArrayInput, Filter, TextInput } from 'react-admin';
 
 const HomeFilters = (props) => {
 	const methods = [

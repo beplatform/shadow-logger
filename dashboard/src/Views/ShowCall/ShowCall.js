@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, TabbedShowLayout, TextField, ArrayField, Datagrid, DateField } from 'react-admin';
+import { Tab, TabbedShowLayout, TextField, DateField } from 'react-admin';
 import { JsonField } from 'react-admin-json-view';
 import ArrayLogs from './ArrayLogs';
 
