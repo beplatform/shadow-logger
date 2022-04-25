@@ -13,15 +13,20 @@ const ShowCall = (props) => {
         <DateField source='request.time' label='Request Time' showTime />
         <TextField source='request.url' label='URL' />
         <TextField source='request.ip' label='IP' />
-        <JsonField source='request.headers' label='Headers' addLabel={true} reactJsonOptions={{name: null, collapsed: true, displayDataTypes: false}} />
-        <JsonField source='request.body' label='Body' addLabel={true} reactJsonOptions={{name: null, collapsed: true, displayDataTypes: false}} />
+        <JsonField source='request.headers' label='Headers' addLabel={true} reactJsonOptions={{name: null, collapsed: false, displayDataTypes: false}} />
+        <JsonField source='request.body' label='Body' addLabel={true} reactJsonOptions={{name: null, collapsed: false, displayDataTypes: false}} />
 			</Tab>
 			<Tab label='response'>
 				<TextField source='id' label='Request ID' />
 				<hr/>
         <TextField source='response.status' label='Status' color='red' />
-        <DateField source='response.time' label='Response Time' />
-        <JsonField source='response.body' label='Body' addLabel={true} reactJsonOptions={{name: null, collapsed: true, displayDataTypes: false}} />
+        <DateField source='response.time' label='Response Time' showTime />
+        {
+          props.record && props.record.response && props.record.response.body && typeof props.record.response.body === 'object' ?
+          <JsonField source='response.body' label='Body' addLabel={true} reactJsonOptions={{name: null, collapsed: false, displayDataTypes: false}} />
+          :
+          <TextField source='response.body' label='Body' />
+        }
 			</Tab>
 			<Tab label='logs'>
         <ArrayLogs />
