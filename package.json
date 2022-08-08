@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
-  "main": "./dist/main.js",
+  "main": "./lib/main.js",
   "type": "module",
   "scripts": {
     "test": "mocha",
