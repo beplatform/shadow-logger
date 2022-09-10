@@ -22,7 +22,7 @@ const ShowCall = (props) => {
                 <TextField source='statusCode' label='Status' color='red' />
                 <DateField source='time' label='Response Time' showTime />
                 {
-                    props.record && props.record.response && props.record.response.body && typeof props.record.response.body === 'object' ?
+                    props.record && props.record.body && typeof props.record.body === 'object' ?
                         <JsonField source='body' label='Body' addLabel={true} reactJsonOptions={{ name: null, collapsed: false, displayDataTypes: false }} />
                         :
                         <TextField source='body' label='Body' />
