@@ -14,8 +14,6 @@ const HomeList = (({ classes, ...props }) => (
       <TextField source='id' sortable={false} />
       <DateField source='time' showTime />
       <TextField source='ip'/>
-      <TextField source='queryCount'/>
-      <TextField source='mailCount'/>
       <TextField source='method'/>
       <TextField source='url'/>
       <TextField source='status'/>
