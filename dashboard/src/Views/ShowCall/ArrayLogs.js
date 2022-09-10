@@ -1,7 +1,10 @@
 import React from 'react';
 import { TextField, DateField } from 'react-admin';
 
-const ArrayLogs = ({record}) => {
+const ArrayLogs = (props) => {
+  const { data } = props;
+  const { logs } = data;
+
   return (
     <div className='RaTabbedShowLayout-content-57'>
       <span>
@@ -21,7 +24,7 @@ const ArrayLogs = ({record}) => {
               </tr>
             </thead>
             <tbody className='MuiTableBody-root datagrid-body RaDatagrid-tbody-64'>
-              {record.logs.map((l, i) => {
+              {logs.map((l, i) => {
                 const colorBG = l.level === 'error' ? '#ff8a80' : (l.level === 'warn' ? '#ff9800' : '#2196f3')
                 return (
                   <tr key={`log_${i}`} className='MuiTableRow-root RaDatagrid-row-68 RaDatagrid-rowEven-70 MuiTableRow-hover' style={{backgroundColor: colorBG}}>
@@ -32,7 +35,7 @@ const ArrayLogs = ({record}) => {
                       <TextField source='level' record={l} />
                     </td>
                     <td className='MuiTableCell-root MuiTableCell-body column-time RaDatagrid-rowCell-72 MuiTableCell-sizeSmall'>
-                      <TextField source='message' record={l}/>
+                      <TextField source='msg' record={l}/>
                     </td>
                   </tr>
                 );
@@ -46,3 +49,4 @@ const ArrayLogs = ({record}) => {
 };
 
 export default ArrayLogs;
+
