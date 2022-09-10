@@ -13,7 +13,7 @@ const dataProvider = {
     return apiInstance.get(`/${resource}?${qp}`);
   },
   getOne: (resource, params) => {
-    return apiInstance.get(`/${params.id}.json`);
+    return apiInstance.get(`/${params.id}.log`);
   },
   getMany:    (resource, params) => { return new Promise((resolve, reject) => {resolve('Hi')});},
   getManyReference: (resource, params) => { return new Promise((resolve, reject) => {resolve('Hi')});},
