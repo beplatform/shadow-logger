@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, TabbedShowLayout, TextField, DateField } from 'react-admin';
+import dataprovider from '../../dataProvider/dataProvider.js'
 import { JsonField } from 'react-admin-json-view';
 import ArrayLogs from './ArrayLogs';
 
-const ShowCall = (props) => {
+const ShowCall = props => {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+      dataprovider.getOne(null, { id: props.record.id }).then(res => setData(res.data))
+    }, [props.record.id]);
+
     return (
         <TabbedShowLayout {...props}>
             <Tab label='request'>
@@ -29,10 +36,11 @@ const ShowCall = (props) => {
                 }
             </Tab>
             <Tab label='logs'>
-                <ArrayLogs />
+                <ArrayLogs data={data} />
             </Tab>
         </TabbedShowLayout>
     );
 };
 
 export default ShowCall;
+
