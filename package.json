@@ -13,7 +13,7 @@
         "start": "cd ./dashboard && react-scripts start",
         "start:localhost": "cd ./dashboard && REACT_APP_API_URL=http://localhost/logs react-scripts start",
         "build:dev": "cd ./dashboard && REACT_APP_API_URL=http://localhost:8081/logs PUBLIC_URL=/debug react-scripts build",
-        "build": "cd ./dashboard && REACT_APP_API_URL='/debuglogs' PUBLIC_URL='/debug' react-scripts build"
+        "build": "cd ./dashboard && REACT_APP_API_URL='/logs' PUBLIC_URL='/debug' react-scripts build"
     },
     "repository": {
         "type": "git",
