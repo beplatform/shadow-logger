@@ -1,6 +1,6 @@
 {
   "name": "shadow-logger",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Debugger dashboard for express apps",
   "bin": "./lib/cli.js",
   "main": "./lib/main.js",
