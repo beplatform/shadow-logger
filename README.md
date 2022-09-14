@@ -58,5 +58,11 @@ npx shadow-logger install
 Will install the dashboard static files on .debug/ by default. 
 
 ## Usage
+
 After finishing the steps on installation the debugger should be available on /debug and write logs grouped by their request.
+
+
+
+
+https://user-images.githubusercontent.com/1624006/190043748-57cff199-e6cd-4de0-9690-66f477c26bfa.mov
 
